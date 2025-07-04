@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Video &amp; Photos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #101010;
+            font-family: Arial, sans-serif;
+        }
+
+        #nav-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #nav-bar a:hover {
+            background-color: #555;
+        }
+
+        .wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cols {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .col {
+            width: calc(25% - 2rem);
+            margin: 1rem;
+            cursor: pointer;
+        }
+
+        .container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .menu-thumb img,
+        .menu-thumb video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-thumb:hover img,
+        .menu-thumb:hover video {
+            transform: scale(1.1);
+        }
+
+        .menu-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            color: #fff;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .menu-thumb:hover .menu-info {
+            opacity: 1;
+        }
+
+        .menu-info h3,
+        .menu-info p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Custom styles for video gallery */
+        .front .inner p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .front .inner p:after {
+            content: '';
+            width: 4rem;
+            height: 2px;
+            position: absolute;
+            background: #eaeaea;
+            display: block;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: -.75rem;
+        }
+
+        .front .inner span {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Montserrat';
+            font-weight: 300;
+        }
+
+        @media screen and (max-width: 64rem) {
+            .col {
+                width: calc(33.333333% - 2rem);
+            }
+        }
+
+        @media screen and (max-width: 48rem) {
+            .col {
+                width: calc(50% - 2rem);
+            }
+        }
+
+        @media screen and (max-width: 32rem) {
+            .col {
+                width: 100%;
+                margin: 0 0 2rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav-bar">
+        <a href="#images">Images</a>
+        <a href="#videos">Videos</a>
+    </nav>
+
+    <div class="wrapper">
+        <!-- Images Section -->
+        <section id="images" class="animated-container">
+            <!-- Image containers -->
+            <div class="cols">
+                <!-- Image containers -->
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="menu-thumb">
+                            <a href="#">
+                                <img src="path/to/your/image.jpg" alt="Image 1">
+                                <div class="menu-info">
+                                    <h3>Image Title</h3>
+                                    <p>Location</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more image containers here if needed -->
+            </div>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="animated-container">
+            <!-- Video containers -->
+            <div class="cols">
+                <!-- Video containers from your code -->
+                <div class="col" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="menu-thumb">
+                            <a href="images/v3.mp4" class="image-popup">
+                                <video src="images/v3.mp4" autoplay controls muted width="80%" loop></video>
+                                <div class="menu-info">
+                                    <div class="menu-item">
+                                        <h3>Roll Icecream</h3>
+                                        <p>📍Vidyasagar Park</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="menu-thumb">
+                          <a href="images/v1.mp4" class="image-popup">
+                               <video src="images/v1.mp4"autoplay controls   muted loop style="width: 80%; height: 60%;"></video>
+  
+                               <div class="menu-info">
+                                    <div class="menu-item">
+                                         <h3>Seoul Story</h3>
+                                         <p>📍Park Street</p>
+                                    </div>
+                                    <!-- <div class="menu-price">
+                                         <span>$46</span>
+                                    </div> -->
+                               </div>
+                          </a>
+                     </div>
+                     
+                  </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="menu-thumb">
+                          <a href="images/v4.mp4" class="image-popup" >
+                               <video src="images/v4.mp4"autoplay controls  muted loop style="width: 80%;"></video>
+  
+                               <div class="menu-info">
+                                    <div class="menu-item">
+                                         <h3>Absolute Barbecue</h3>
+                                         <p>📍Park Street</p>
+                                    </div>
+                                    <!-- <div class="menu-price">
+                                         <span>$30</span>
+                                    </div> -->
+                               </div>
+                          </a>
+                     </div>
+                  </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                          <div class="menu-thumb">
+                               <a href="images/v2.mp4" class="image-popup">
+                                  <video src="images/v2.mp4" autoplay controls  muted width=" 80%" loop> </video>
+  
+                                    <div class="menu-info" style="justify-content: cover;">
+                                         <div class="menu-item">
+                                              <h3>Barbecue Nation</h3>
+                                              <p>📍Diamond Plaza</p>
+                                         </div>
+                                         <!-- <div class="menu-price">
+                                              <span>$25</span>
+                                         </div> -->
+                                    </div>
+                               </a>
+                          </div>
+                     </div>
+                      
+              </div>
+              
+          </div><div class="cols">
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="menu-thumb">
+                                <a href="images/v1.mp4" class="image-popup" >
+                                     <video src="images/v1.mp4"autoplay controls  muted width=" 80%" loop></video>
+  
+                                     <div class="menu-info">
+                                          <div class="menu-item">
+                                               <h3>Roll Icecream</h3>
+                                               <p>📍Vidyasagar Park</p>
+                                          </div>
+                                          <!-- <div class="menu-price">
+                                               <span>$28</span>
+                                          </div> -->
+                                     </div>
+                                </a>
+                           </div>
+                      
+                  </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="menu-thumb">
+                          <a href="images/v6.mp4" class="image-popup" >
+                               <video src="images/v6.mp4"autoplay controls  muted loop style="width: 80%; height: 60%;"></video>
+  
+                               <div class="menu-info">
+                                    <div class="menu-item">
+                                         <h3>Bong Pizza</h3>
+                                         <p>📍Paikpara</p>
+                                    </div>
+                                    <!-- <div class="menu-price">
+                                         <span>$46</span>
+                                    </div> -->
+                               </div>
+                          </a>
+                     </div>
+                     
+                  </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                  <div class="container">
+                      <div class="menu-thumb">
+                          <a href="images/v5.mp4" class="image-popup" >
+                               <video src="images/v5.mp4"autoplay controls   muted loop style="width: 80%;"></video>
+  
+                               <div class="menu-info">
+                                    <div class="menu-item">
+                                         <h3>Babylon</h3>
+                                         <p>📍Salt Lake</p>
+                                    </div>
+                                    <!-- <div class="menu-price">
+                                         <span>$30</span>
+                                    </div> -->
+                               </div>
+                          </a>
+                     </div>
+                  </div>
+              </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll('#nav-bar a');
+            const containers = document.querySelectorAll('.animated-container');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href').replace('#', '');
+                    containers.forEach(container => {
+                        container.classList.remove('show');
+                    });
+                    document.getElementById(target).classList.add('show');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
